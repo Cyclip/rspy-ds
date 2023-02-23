@@ -1,4 +1,5 @@
 mod queue;
+mod circular_queue;
 
 use pyo3::prelude::*;
 
@@ -6,5 +7,6 @@ use pyo3::prelude::*;
 #[pymodule]
 fn rspy_ds(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<queue::Queue>()?;
+    m.add_class::<circular_queue::CircularQueue>()?;
     Ok(())
 }
