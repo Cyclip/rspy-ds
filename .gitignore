@@ -1,0 +1,4 @@
+/target
+.env
+pytests/__pycache__
+.pytest_cache
