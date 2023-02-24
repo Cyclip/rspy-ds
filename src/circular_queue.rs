@@ -1,3 +1,5 @@
+//! A circular queue data structure with a fixed capacity
+
 use pyo3::{prelude::*, exceptions::PyIndexError};
 
 #[pyclass]

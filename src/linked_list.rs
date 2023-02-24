@@ -1,6 +1,8 @@
+//! Linked list implementation
+
 use pyo3::{prelude::*, exceptions::PyIndexError};
 
-type Link = Option<Box<Node>>;
+type Link = Option<Box<LLNode>>;
 
 /// Linked list
 #[pyclass]
@@ -10,7 +12,7 @@ pub struct LinkedList {
 }
 
 #[pyclass]
-pub struct Node {
+pub struct LLNode {
     elem: PyObject,
     next: Link
 }
@@ -24,7 +26,7 @@ impl LinkedList {
 
     /// Push an element onto the front of the list
     fn push(&mut self, elem: PyObject) {
-        let new_node = Box::new(Node {
+        let new_node = Box::new(LLNode {
             elem: elem,
             next: self.head.take(),
         });
